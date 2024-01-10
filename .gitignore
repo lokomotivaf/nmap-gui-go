@@ -7,7 +7,6 @@
 /dataSources/
 /dataSources.local.xml
 
-
 build/bin
 node_modules
 frontend/dist
