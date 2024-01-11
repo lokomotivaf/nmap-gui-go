@@ -28,7 +28,6 @@ func (a *App) Greet(name string) string {
 	return fmt.Sprintf("Hello %s, It's show time!", name)
 }
 
-// CREATE A FUNCTION THAT RUNS OS ECHO COMMAND AND RETURNS THE OUTPUT/ERROR AND ANY OUTPUT AS A STRING
 func (a *App) RunCommand(command string) (string, error) {
 	cmd := exec.Command("sh", "-c", command)
 	println("Running command: ", command)
@@ -37,7 +36,6 @@ func (a *App) RunCommand(command string) (string, error) {
 	cmd.Stderr = &errBuffer
 
 	err := cmd.Run()
-	println(err)
 	if err != nil {
 		return errBuffer.String(), nil
 	}

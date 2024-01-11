@@ -1,24 +1,26 @@
 import {useState} from 'react';
 import './App.css';
-import {RunCommand} from "../wailsjs/go/main/App";
+import * as Tabs from '@radix-ui/react-tabs';
+import ScanPage from "./pages/scan.page";
+import DocsPage from "./pages/docs.page";
 
 function App() {
-  const [resultText, setResultText] = useState("console");
-  const [command, setCommand] = useState('');
-
   return (
     <div id="App">
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        RunCommand(command).then((result: string) => setResultText(result));
-      }} className="input-box">
-        <input className="input" onChange={(e: any) => setCommand(e.target.value)} autoComplete="off" name="input" type="text"/>
-        <button className="btn" type="submit">run
-        </button>
-      </form>
-      <pre>
-        {resultText}
-      </pre>
+      <Tabs.Root className="tab-layout" defaultValue="docs" orientation="vertical">
+        <Tabs.List className="left-menu" aria-label="left-menu-tabs">
+          <Tabs.Trigger value="docs">Docs</Tabs.Trigger>
+          <Tabs.Trigger value="scan">Scan</Tabs.Trigger>
+          <Tabs.Trigger value="reports">Reports</Tabs.Trigger>
+        </Tabs.List>
+        <Tabs.Content className="tab-content" value="docs">
+          <DocsPage></DocsPage>
+        </Tabs.Content>
+        <Tabs.Content className="tab-content" value="scan">
+          <ScanPage></ScanPage>
+        </Tabs.Content>
+        <Tabs.Content className="tab-content" value="reports">Tab three content</Tabs.Content>
+      </Tabs.Root>
     </div>
   )
 }
