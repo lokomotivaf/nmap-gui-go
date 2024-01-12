@@ -1,14 +1,15 @@
-import {RunCommand} from "../../wailsjs/go/main/App";
+import {GetConsoleOutput, RunCommand} from "../../wailsjs/go/main/App";
 import {useState} from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 
 export default function ScanPage() {
   const [resultText, setResultText] = useState("console");
   const [command, setCommand] = useState('');
+  const [isRunning, setIsRunning] = useState(false);
 
   return (
     <div className="scan-page-layout">
-      <Tabs.Root defaultValue="scanning" orientation="vertical">
+      <Tabs.Root defaultValue="scanning" orientation="horizontal">
         <Tabs.List aria-label="left-menu-tabs">
           <Tabs.Trigger value="scanning">Scanning</Tabs.Trigger>
           <Tabs.Trigger value="output">Output</Tabs.Trigger>
@@ -21,13 +22,24 @@ export default function ScanPage() {
 
       <div>
         <h1>Scan</h1>
+        <button onClick={() => {
+          // @ts-ignore
+          GetConsoleOutput().then((output ) => {
+            setResultText(output)
+          });
+        }}>testbutton
+        </button>
         <form onSubmit={(e) => {
           e.preventDefault();
           //TODO could the run command be used with react query? because it returns a promise?
-          RunCommand(command).then((result: string) => setResultText(result));
+          //MUZU DRZET V REACT QUERY GLOBALNI STATE, TED JSEM SE NA TO PODIVAL, NEVIM JESTLI VYUZIJU, ALE NAPR NA THEME BY TO FUNGOVALO
+          setIsRunning(true);
+          void RunCommand(command).then(() => {
+            setIsRunning(false);
+          });
         }} className="input-box">
         <input className="input" onChange={(e: any) => setCommand(e.target.value)} autoComplete="off" name="input" type="text"/>
-          <button className="btn" type="submit">run
+          <button disabled={isRunning} className="btn" type="submit">run
           </button>
         </form>
         <pre>

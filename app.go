@@ -1,15 +1,19 @@
 package main
 
 import (
-	"bytes"
 	"context"
-	"fmt"
+	"io"
 	"os/exec"
 )
 
-// App struct
+type consoleState struct {
+	output    string
+	isRunning bool
+}
+
 type App struct {
-	ctx context.Context
+	ctx          context.Context
+	consoleState consoleState
 }
 
 // NewApp creates a new App application struct
@@ -23,22 +27,59 @@ func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 }
 
-// Greet returns a greeting for the given name
-func (a *App) Greet(name string) string {
-	return fmt.Sprintf("Hello %s, It's show time!", name)
+func (a *App) GetConsoleOutput() string {
+	println(a.consoleState.output)
+	return a.consoleState.output
 }
 
-func (a *App) RunCommand(command string) (string, error) {
+func (a *App) GetConsoleIsRunning() bool {
+	return a.consoleState.isRunning
+}
+
+func (a *App) RunCommand(command string) {
 	cmd := exec.Command("sh", "-c", command)
 	println("Running command: ", command)
-	var outBuffer, errBuffer bytes.Buffer
-	cmd.Stdout = &outBuffer
-	cmd.Stderr = &errBuffer
+	a.consoleState.isRunning = true
 
-	err := cmd.Run()
+	stdoutPipe, err := cmd.StdoutPipe()
 	if err != nil {
-		return errBuffer.String(), nil
+		a.consoleState.output = "Error creating StdoutPipe for Cmd: " + err.Error()
+		return
 	}
 
-	return outBuffer.String(), nil
+	stderrPipe, err := cmd.StderrPipe()
+	if err != nil {
+		a.consoleState.output = "Error creating StderrPipe for Cmd: " + err.Error()
+		return
+	}
+
+	err = cmd.Start()
+	if err != nil {
+		a.consoleState.output = "Error starting Cmd: " + err.Error()
+		return
+	}
+
+	go func() {
+		io.Copy(&outputWriter{app: a}, stdoutPipe)
+	}()
+
+	go func() {
+		io.Copy(&outputWriter{app: a}, stderrPipe)
+	}()
+
+	err = cmd.Wait()
+	println(err)
+	a.consoleState.isRunning = false
+	if err != nil {
+		a.consoleState.output += "Error waiting for Cmd: " + err.Error()
+	}
+}
+
+type outputWriter struct {
+	app *App
+}
+
+func (w *outputWriter) Write(p []byte) (n int, err error) {
+	w.app.consoleState.output += string(p)
+	return len(p), nil
 }

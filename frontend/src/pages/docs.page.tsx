@@ -10,12 +10,29 @@ export default function DocsPage() {
           <Tabs.Trigger value="nmap">Nmap</Tabs.Trigger>
         </Tabs.List>
         <Tabs.Content  value="this">
-          <p>This app serves as a gui client for nmap. In order to use this app you need to have nmap installed and in your PATH variable as it primary works by calling the binary, or you can include the path to the executable in the setting tab</p>
+          <AppDocs/>
         </Tabs.Content>
         <Tabs.Content value="nmap">
-          <a href="https://nmap.org/book/toc.html">Nmap Documentation</a>
+          <NmapDocs/>
         </Tabs.Content>
       </Tabs.Root>
+    </>
+  )
+}
+
+
+function AppDocs() {
+  return (
+    <>
+      <p>This app serves as a gui client for nmap. In order to use this app you need to have nmap installed and in your PATH variable as it primary works by calling the binary, or you can include the path to the executable in the setting tab</p>
+    </>
+  )
+}
+
+function NmapDocs() {
+  return (
+    <>
+      <a href="https://nmap.org/book/toc.html">Nmap Documentation</a>
     </>
   )
 }
