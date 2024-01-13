@@ -2,7 +2,7 @@ import * as Tabs from "@radix-ui/react-tabs";
 
 export default function DocsPage() {
   return (
-    <>
+    <div className="docs-page">
       <h1>Docs</h1>
       <Tabs.Root defaultValue="this" orientation="horizontal">
         <Tabs.List aria-label="left-menu-tabs">
@@ -16,7 +16,7 @@ export default function DocsPage() {
           <NmapDocs/>
         </Tabs.Content>
       </Tabs.Root>
-    </>
+    </div>
   )
 }
 

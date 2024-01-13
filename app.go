@@ -7,13 +7,18 @@ import (
 )
 
 type consoleState struct {
-	output    string
-	isRunning bool
+	output string
+}
+
+func (c *consoleState) Write(p []byte) (n int, err error) {
+	c.output += string(p)
+	return len(p), nil
 }
 
 type App struct {
 	ctx          context.Context
 	consoleState consoleState
+	//reportsState string
 }
 
 // NewApp creates a new App application struct
@@ -28,58 +33,53 @@ func (a *App) startup(ctx context.Context) {
 }
 
 func (a *App) GetConsoleOutput() string {
-	println(a.consoleState.output)
 	return a.consoleState.output
 }
 
-func (a *App) GetConsoleIsRunning() bool {
-	return a.consoleState.isRunning
-}
-
 func (a *App) RunCommand(command string) {
-	cmd := exec.Command("sh", "-c", command)
 	println("Running command: ", command)
-	a.consoleState.isRunning = true
+	if command == "clear" {
+		a.consoleState.output = ""
+		return
+	}
+
+	cmd := exec.Command("sh", "-c", command)
 
 	stdoutPipe, err := cmd.StdoutPipe()
 	if err != nil {
-		a.consoleState.output = "Error creating StdoutPipe for Cmd: " + err.Error()
+		logRunCommandError("Error creating StdoutPipe for Cmd: "+err.Error()+"\n", &a.consoleState)
 		return
 	}
 
 	stderrPipe, err := cmd.StderrPipe()
 	if err != nil {
-		a.consoleState.output = "Error creating StderrPipe for Cmd: " + err.Error()
+		logRunCommandError("Error creating StderrPipe for Cmd: "+err.Error()+"\n", &a.consoleState)
 		return
 	}
 
 	err = cmd.Start()
 	if err != nil {
-		a.consoleState.output = "Error starting Cmd: " + err.Error()
+		logRunCommandError("Error starting Cmd: "+err.Error()+"\n", &a.consoleState)
 		return
 	}
 
 	go func() {
-		io.Copy(&outputWriter{app: a}, stdoutPipe)
+		_, _ = io.Copy(&a.consoleState, stdoutPipe)
 	}()
 
 	go func() {
-		io.Copy(&outputWriter{app: a}, stderrPipe)
+		_, _ = io.Copy(&a.consoleState, stderrPipe)
 	}()
 
 	err = cmd.Wait()
-	println(err)
-	a.consoleState.isRunning = false
 	if err != nil {
-		a.consoleState.output += "Error waiting for Cmd: " + err.Error()
+		logRunCommandError("Error running command: "+err.Error()+"\n", &a.consoleState)
 	}
 }
 
-type outputWriter struct {
-	app *App
-}
-
-func (w *outputWriter) Write(p []byte) (n int, err error) {
-	w.app.consoleState.output += string(p)
-	return len(p), nil
+func logRunCommandError(s string, c *consoleState) {
+	print(s)
+	if c != nil {
+		_, _ = c.Write([]byte(s))
+	}
 }
