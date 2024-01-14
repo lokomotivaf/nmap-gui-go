@@ -124,7 +124,7 @@ const OptionsTable: FC<OptionsTableProps> = ({title, options}) => {
         {options.map((opt, index) => (
           <Fragment key={index}>
             <div onClick={() => {
-              setCommand((command || "") + " " + opt.option)
+              setCommand((command || "nmap") + " " + opt.option)
             }}>{opt.option}</div>
             <div>{opt.description}</div>
           </Fragment>

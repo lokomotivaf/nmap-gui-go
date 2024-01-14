@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78b8f112-a33e-4915-8a9e-81aa18d516a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/useConsoleOutput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/hooks/useGlobalState.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json.md5" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json.md5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/docs.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/docs.page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/scan.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/scan.page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/wailsjs/go/main/App.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/wailsjs/go/main/App.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/wailsjs/go/main/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/wailsjs/go/main/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +87,7 @@
       <updated>1722014981047</updated>
       <workItem from="1722014982161" duration="1560000" />
       <workItem from="1722017182568" duration="7194000" />
-      <workItem from="1722032473446" duration="15574000" />
+      <workItem from="1722032473446" duration="16346000" />
     </task>
     <servers />
   </component>
