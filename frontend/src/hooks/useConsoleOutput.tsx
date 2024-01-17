@@ -3,9 +3,8 @@ import {GetConsoleOutput} from "../../wailsjs/go/main/App";
 
 export const useConsoleOutput = () => {
   return useQuery({
-    queryKey: ['results'],
+    queryKey: ['consoleOutput'],
     queryFn: () => {
-      console.log('refetch called')
       return GetConsoleOutput();
     },
     refetchInterval: 1000,

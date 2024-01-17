@@ -6,6 +6,14 @@ export function GetConsoleOutput() {
   return window['go']['main']['App']['GetConsoleOutput']();
 }
 
+export function GetReport(arg1) {
+  return window['go']['main']['App']['GetReport'](arg1);
+}
+
+export function GetReports() {
+  return window['go']['main']['App']['GetReports']();
+}
+
 export function RunCommand(arg1) {
   return window['go']['main']['App']['RunCommand'](arg1);
 }

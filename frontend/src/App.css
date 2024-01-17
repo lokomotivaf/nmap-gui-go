@@ -129,6 +129,7 @@
 }
 
 .scan-page-table div:nth-child(odd) {
+    cursor: pointer;
     color: var(--2nd-text-color);
 }
 
@@ -160,7 +161,37 @@
     cursor: pointer;
 }
 
-
 .docs-page div[role="tablist"] button:hover, .docs-page div[role="tablist"] button[data-state="active"] {
     background-color: var(--1st-bg-color);
+}
+
+.reports-page {
+    padding: 16px;
+}
+
+.reports-page button {
+    background-color: var(--1st-bg-color);
+    border: 1px solid var(--2nd-bg-color);
+    color: var(--1st-text-color);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.reports-page button:hover {
+    opacity: 0.8;
+}
+
+.reports-page button:disabled {
+    background-color: var(--2nd-bg-color);
+    filter: grayscale(1) opacity(0.5);
+    cursor: not-allowed;
+}
+
+.reports-table {
+    display: grid;
+    font-size: 14px;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-gap: 2px;
+    max-height: calc(100vh - 100px);
+    overflow: auto;
 }

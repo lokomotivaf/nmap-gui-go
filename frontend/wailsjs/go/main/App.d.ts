@@ -3,4 +3,8 @@
 
 export function GetConsoleOutput():Promise<string>;
 
+export function GetReport(arg1:string):Promise<string>;
+
+export function GetReports():Promise<string>;
+
 export function RunCommand(arg1:string):Promise<void>;

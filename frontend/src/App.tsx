@@ -3,6 +3,7 @@ import * as Tabs from '@radix-ui/react-tabs';
 import ScanPage from "./pages/scan.page";
 import DocsPage from "./pages/docs.page";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import ReportsPage from "./pages/reports.page";
 export const queryClient = new QueryClient();
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
           <Tabs.Content className="tab-content" value="scan">
             <ScanPage></ScanPage>
           </Tabs.Content>
-          <Tabs.Content className="tab-content" value="reports">Tab three content</Tabs.Content>
+          <Tabs.Content className="tab-content" value="reports"><ReportsPage></ReportsPage></Tabs.Content>
         </Tabs.Root>
       </QueryClientProvider>
     </div>
