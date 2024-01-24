@@ -349,6 +349,9 @@ template {
 }
 
 /*END OF NORMALIZE*/
+
+
+
 :root {
     --1st-bg-color: rgba(27, 38, 54, 1);
     --2nd-bg-color: rgb(59, 80, 108);
@@ -365,20 +368,9 @@ html {
 body {
     margin: 0;
     color: white;
-    /*font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",*/
-    /*"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",*/
-    /*sans-serif;*/
     font-family: sans-serif;
 }
 
 h1 {
     text-align: center;
 }
-
-/*@font-face {*/
-/*    font-family: "Nunito";*/
-/*    font-style: normal;*/
-/*    font-weight: 400;*/
-/*    src: local(""),*/
-/*    url("assets/fonts/nunito-v16-latin-regular.woff2") format("woff2");*/
-/*}*/

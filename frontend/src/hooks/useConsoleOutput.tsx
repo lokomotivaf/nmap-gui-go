@@ -1,12 +1,12 @@
-import {useQuery} from "@tanstack/react-query";
-import {GetConsoleOutput} from "../../wailsjs/go/main/App";
+import { useQuery } from '@tanstack/react-query'
+import { GetConsoleOutput } from '../../wailsjs/go/main/App'
 
-export const useConsoleOutput = () => {
+export function useConsoleOutput() {
   return useQuery({
     queryKey: ['consoleOutput'],
     queryFn: () => {
-      return GetConsoleOutput();
+      return GetConsoleOutput()
     },
     refetchInterval: 1000,
-  });
+  })
 }

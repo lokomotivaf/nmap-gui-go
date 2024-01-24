@@ -1,14 +1,14 @@
-import {useQuery} from "@tanstack/react-query";
-import {GetConsoleOutput, GetReports} from "../../wailsjs/go/main/App";
+import { useQuery } from '@tanstack/react-query'
+import { GetReports } from '../../wailsjs/go/main/App'
 
-export const useReports = () => {
+export function useReports() {
   return useQuery({
     queryKey: ['reports'],
     queryFn: () => {
-      return GetReports();
+      return GetReports()
     },
     enabled: true,
     refetchOnWindowFocus: true,
     refetchInterval: false,
-  });
+  })
 }

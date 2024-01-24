@@ -1,10 +1,11 @@
-import './App.css';
-import * as Tabs from '@radix-ui/react-tabs';
-import ScanPage from "./pages/scan.page";
-import DocsPage from "./pages/docs.page";
-import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
-import ReportsPage from "./pages/reports.page";
-export const queryClient = new QueryClient();
+import './App.css'
+import * as Tabs from '@radix-ui/react-tabs'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import ScanPage from './pages/scan.page'
+import DocsPage from './pages/docs.page'
+import ReportsPage from './pages/reports.page'
+
+export const queryClient = new QueryClient()
 
 function App() {
   return (
