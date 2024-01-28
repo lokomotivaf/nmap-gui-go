@@ -5,7 +5,7 @@ import ScanPage from './pages/scan.page'
 import DocsPage from './pages/docs.page'
 import ReportsPage from './pages/reports.page'
 
-export const queryClient = new QueryClient()
+const queryClient = new QueryClient()
 
 function App() {
   return (
