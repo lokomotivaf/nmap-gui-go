@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="78b8f112-a33e-4915-8a9e-81aa18d516a7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +74,11 @@
     "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
     "ts.external.directory.path": "/Users/franzhirt/Downloads/nmap-gui-go/frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Shell Script"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -104,7 +108,7 @@
       <updated>1722014981047</updated>
       <workItem from="1722014982161" duration="1560000" />
       <workItem from="1722017182568" duration="7194000" />
-      <workItem from="1722032473446" duration="25109000" />
+      <workItem from="1722032473446" duration="25607000" />
     </task>
     <servers />
   </component>
