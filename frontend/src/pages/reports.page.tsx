@@ -20,10 +20,10 @@ export default function ReportsPage() {
     return (
       <div>
         <pre>
-          {' '}
           {report}
+          {/* TODO CONVERT ALL XML TO HTML */}
         </pre>
-        <button onClick={() => setReport('')}>Back</button>
+        <button type="button" onClick={() => setReport('')}>Back</button>
       </div>
     )
   }
@@ -33,7 +33,7 @@ export default function ReportsPage() {
     <div className="reports-page">
       <h1>Reports</h1>
       <p>This page defaulty looks for ./reports from the pwd, in the future there will be a settings tab for this, for now you should output reports to this folder</p>
-      <button onClick={() => refetch()}>Refresh</button>
+      <button type="button" onClick={() => refetch()}>Refresh</button>
       <div className="reports-table">
         <p>NAME</p>
         <p>DATE</p>

@@ -28,6 +28,10 @@ func readReports() []Report {
 			continue
 		}
 
+		if filepath.Ext(file.Name()) != ".xml" {
+			continue
+		}
+
 		reports = append(reports, Report{
 			Name: file.Name(),
 			Date: file.ModTime().String(),

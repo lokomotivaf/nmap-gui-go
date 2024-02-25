@@ -1,6 +1,6 @@
 import type { QueryKey } from '@tanstack/react-query'
 import { useQuery } from '@tanstack/react-query'
-import { queryClient } from '../App'
+import { queryClient } from '../queryClient'
 
 type UseGlobalStateReturnType<T> = [T | undefined, (newData: T) => void]
 

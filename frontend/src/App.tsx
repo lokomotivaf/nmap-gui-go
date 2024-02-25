@@ -1,11 +1,10 @@
 import './App.css'
 import * as Tabs from '@radix-ui/react-tabs'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { QueryClientProvider } from '@tanstack/react-query'
 import ScanPage from './pages/scan.page'
 import DocsPage from './pages/docs.page'
 import ReportsPage from './pages/reports.page'
-
-const queryClient = new QueryClient()
+import { queryClient } from './queryClient'
 
 function App() {
   return (
