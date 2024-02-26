@@ -5,17 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78b8f112-a33e-4915-8a9e-81aa18d516a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/optionTable.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/optionTableData.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/queryClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/useGlobalState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/useGlobalState.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/docs.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/docs.page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/reports.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/reports.page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/scan.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/scan.page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports.go" beforeDir="false" afterPath="$PROJECT_DIR$/reports.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +108,7 @@
       <updated>1722014981047</updated>
       <workItem from="1722014982161" duration="1560000" />
       <workItem from="1722017182568" duration="7194000" />
-      <workItem from="1722032473446" duration="29504000" />
+      <workItem from="1722032473446" duration="30079000" />
     </task>
     <servers />
   </component>
