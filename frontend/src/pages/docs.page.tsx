@@ -1,4 +1,5 @@
 import * as Tabs from '@radix-ui/react-tabs'
+import markdownContent from './docs/app.md?raw'
 
 export default function DocsPage() {
   return (
@@ -23,19 +24,8 @@ export default function DocsPage() {
 function AppDocs() {
   return (
     <pre>
-      {
-        'This app is a simple Nmap wrapper. It allows you to run Nmap commands and see the output in real-time. \n'
-        + 'This app has 3 tabs, Docs, Scan, and Reports. \n'
-        + 'Docs page has a documentation about this app, link to the nmap documentation it self, and some basic info about this app \n'
-        + 'Scan page is where you can run nmap commands \n'
-        + 'Reports page is a place for viewing exported reports from nmap \n \n'
-        + 'Now lets get to this app docs: \n'
-        + 'This app is build with Go , Wails and React, React query and radix ui with some really simple styles \n'
-        + 'Its a simple app that allows you to run nmap commands and see the output in real-time \n'
-        + 'I built it because i kept forgetting all the options for nmap and wanted to have a simple way to run nmap commands and view the reports \n'
-        + 'It has build it table with options for working with nmap with options that you can click for simple command creation \n'
-        + 'As it only runs on your machine, i kept the functionality to run any commands, but its mostly just for nmap'
-      }
+      {markdownContent}
+      {/* TODO ADD FORMATING USING MARKED */}
     </pre>
   )
 }

@@ -2,8 +2,8 @@ import * as Tabs from '@radix-ui/react-tabs'
 import { RunCommand } from '../../wailsjs/go/main/App'
 import { useGlobalState } from '../hooks/useGlobalState'
 import { useConsoleOutput } from '../hooks/useConsoleOutput'
-import { outputOptions, performanceOptions, scanningOptions } from './optionTableData'
-import OptionsTable from './optionTable'
+import { outputOptions, performanceOptions, scanningOptions } from './components/optionTableData'
+import OptionsTable from './components/optionTable'
 
 export default function ScanPage() {
   const [command, setCommand] = useGlobalState<string>(['command'], '')

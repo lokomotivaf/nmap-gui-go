@@ -1,6 +1,6 @@
 import type { FC } from 'react'
 import { Fragment } from 'react'
-import { useGlobalState } from '../hooks/useGlobalState'
+import { useGlobalState } from '../../hooks/useGlobalState'
 import type { OptionsTableProps } from './optionTableData'
 
 const OptionsTable: FC<OptionsTableProps> = ({ title, options }) => {
